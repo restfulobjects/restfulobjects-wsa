@@ -1,0 +1,26 @@
+﻿{
+   "specVersion": "1.0",
+   "implVersion": "0.26.0",
+   "links": [
+      {
+         "rel": "self",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/version\"; charset=utf-8",
+         "href": "http://localhost:7070/version"
+      },
+      {
+         "rel": "up",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/homepage\"; charset=utf-8",
+         "href": "http://localhost:7070/"
+      }
+   ],
+   "extensions": {},
+   "optionalCapabilities": {
+      "protoPersistentObjects": "yes",
+      "deleteObjects": "no",
+      "validateOnly": "yes",
+      "domainModel": "selectable",
+      "blobsClobs": "no"
+   }
+}

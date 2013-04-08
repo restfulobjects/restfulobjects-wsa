@@ -1,0 +1,35 @@
+﻿{
+   "links": [
+      {
+         "rel": "self",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/homepage\"; charset=utf-8",
+         "href": "http://localhost:7070/"
+      },
+      {
+         "rel": "urn:org.restfulobjects:rels/user",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/user\"; charset=utf-8",
+         "href": "http://localhost:7070/user"
+      },
+      {
+         "rel": "urn:org.restfulobjects:rels/services",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/list\"; charset=utf-8; x-ro-element-type=\"System.Object\"",
+         "href": "http://localhost:7070/services"
+      },
+      {
+         "rel": "urn:org.restfulobjects:rels/version",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/version\"; charset=utf-8",
+         "href": "http://localhost:7070/version"
+      },
+      {
+         "rel": "urn:org.restfulobjects:rels/domain-types",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/type-list\"; charset=utf-8",
+         "href": "http://localhost:7070/domain-types"
+      }
+   ],
+   "extensions": {}
+}

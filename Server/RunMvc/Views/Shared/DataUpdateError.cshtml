@@ -1,0 +1,16 @@
+@model NakedObjects.Architecture.Persist.DataUpdateException
+@using NakedObjects.Web.Mvc.Html
+
+@{ 
+ ViewBag.Title = "@(NakedObjects.Resources.MvcUi.DataUpdateErrorTitle)"; 
+}
+
+@section MainContent { 
+@(Html.History())   
+    <div class="error">
+        <img alt="error"  src="@(Url.Content("~/Images/system-error.png"))" />
+	    <h2>@(NakedObjects.Resources.MvcUi.DataUpdateErrorTitle)</h2>
+
+	    <p>@(Model.Message)</p>
+    </div> 
+}

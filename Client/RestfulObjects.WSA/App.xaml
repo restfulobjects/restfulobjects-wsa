@@ -1,0 +1,30 @@
+﻿<Infrastructure:MvvmAppBase x:Class="RestfulObjects.WSA.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Infrastructure="using:Microsoft.Practices.StoreApps.Infrastructure"
+             xmlns:converters="using:RestfulObjects.WSA.Converters">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Common/StandardStyles.xaml" />
+
+                <ResourceDictionary Source="Themes/Generic.xaml" />
+                <ResourceDictionary Source="Themes/LightThemedStyles.xaml" />
+                <ResourceDictionary Source="Themes/DataTemplates.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+            <x:String x:Key="AppName">GWSACORO</x:String>
+
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:BooleanNegationToVisibilityConverter x:Key="BooleanNegationToVisibilityConverter" />
+            <converters:NullToVisibleConverter x:Key="NullToVisibleConverter" />
+            <converters:NotNullToVisibleConverter x:Key="NotNullToVisibleConverter" />
+            <converters:IsSignInInvalidConverter x:Key="IsSignInInvalidConverter" />
+            <converters:FormStatusToVisibilityConverter x:Key="FormStatusToVisibilityConverter" />
+            <converters:FormStatusToStyleConverter x:Key="FormStatusToStyleConverter" />
+            <converters:FirstErrorConverter x:Key="FirstErrorConverter" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Infrastructure:MvvmAppBase>

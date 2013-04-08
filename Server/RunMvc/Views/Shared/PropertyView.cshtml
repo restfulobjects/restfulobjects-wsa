@@ -1,0 +1,4 @@
+@model NakedObjects.Web.Mvc.Models.PropertyViewModel
+@using NakedObjects.Web.Mvc.Html
+
+@(Html.PropertyListWith(Model.ContextObject, Model.PropertyName))

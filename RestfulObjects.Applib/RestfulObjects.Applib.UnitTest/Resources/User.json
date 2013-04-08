@@ -1,0 +1,20 @@
+﻿{
+   "userName": "WELFARE\\sven",
+   "roles": ["role1", "role2", "role3"],
+   "links": [
+      {
+         "rel": "self",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/user\"; charset=utf-8",
+         "href": "http://localhost:7070/user"
+      },
+      {
+         "rel": "up",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/homepage\"; charset=utf-8",
+         "href": "http://localhost:7070/"
+      }
+   ],
+   "extensions": {
+	}
+}

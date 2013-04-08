@@ -1,0 +1,75 @@
+﻿{
+   "id": "FindByPpsn",
+   "parameters": {
+      "ppsn": {
+         "links": [
+            {
+               "rel": "describedby",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/action-param-description\"; charset=utf-8",
+               "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByPpsn/params/ppsn"
+            }
+         ],
+         "extensions": {
+            "friendlyName": "Ppsn",
+            "description": "",
+            "optional": false,
+            "returnType": "string",
+            "format": "string",
+            "maxLength": 8,
+            "pattern": ""
+         }
+      }
+   },
+   "extensions": {
+      "friendlyName": "Find By Ppsn",
+      "description": "",
+      "hasParams": true,
+      "memberOrder": 0,
+      "returnType": "Sdm.Cluster.Customers.Impl.Customer"
+   },
+   "links": [
+      {
+         "rel": "self",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object-action\"; charset=utf-8",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByPpsn"
+      },
+      {
+         "rel": "up",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices"
+      },
+      {
+         "arguments": {
+            "ppsn": {
+               "value": null
+            }
+         },
+         "rel": "urn:org.restfulobjects:rels/invoke;action=\"FindByPpsn\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/action-result\"; charset=utf-8",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByPpsn/invoke"
+      },
+      {
+         "rel": "urn:org.restfulobjects:rels/return-type",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/domain-type\"; charset=utf-8",
+         "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Customer"
+      },
+      {
+         "rel": "describedby",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/action-description\"; charset=utf-8",
+         "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByPpsn"
+      },
+      {
+         "id": "ppsn",
+         "rel": "urn:org.restfulobjects:rels/action-param",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/action-param-description\"; charset=utf-8",
+         "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByPpsn/params/ppsn"
+      }
+   ]
+}

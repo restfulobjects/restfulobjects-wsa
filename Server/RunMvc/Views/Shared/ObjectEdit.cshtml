@@ -1,0 +1,16 @@
+@model object
+@using NakedObjects.Web.Mvc.Html
+@using NakedObjects.Web.Mvc.Models
+
+@{
+    Layout = "Site.WithServices.cshtml";
+}
+
+@section title {@Html.ObjectTitle(Model)}
+
+@section MainContent { 
+@Html.History(Model)   
+    <div class="@(IdHelper.ObjectEditName + " " +  Html.TransientFlag(Model is FindViewModel ? ((FindViewModel) Model).TargetObject : Model))" id="@Html.ObjectTypeAsCssId(Model)">
+        @{ Html.RenderPartial("ObjectEditControl", Model); }          
+     </div> 
+}

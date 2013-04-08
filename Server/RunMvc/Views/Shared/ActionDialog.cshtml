@@ -1,0 +1,17 @@
+@model NakedObjects.Web.Mvc.Models.FindViewModel
+@using NakedObjects.Web.Mvc.Html
+
+@{  
+    Layout = "Site.WithServices.cshtml";
+}
+
+@section Title {@(Model.ContextAction.Name)}
+
+@section MainContent { 
+@(Html.History())   
+    <div class="@(IdHelper.ActionDialogName)" id="@(Html.ObjectActionDialogId(Model.ContextObject, Model.ContextAction))" >
+        @{ Html.RenderPartial("DialogControl", Model);}
+
+    </div> 
+}
+

@@ -1,0 +1,63 @@
+
+@using NakedObjects.Web.Mvc.Html
+<!DOCTYPE html>
+<html lang="en">
+    <head runat="server">
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <link href="@(Url.Content("~/favicon.ico"))" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @(Styles.Render("~/Content/nakedobjectscss" ))
+        <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css" rel="Stylesheet" />
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js"></script>
+    </head>
+    <body>
+        <header>
+            @if (!Html.ViewContext.HttpContext.Request.IsAjaxRequest()) {    
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p class="site-title">@(Html.ActionLink("Naked Objects Group Ltd", "Index", "System"))</p>
+                    </div>
+                    <div class="float-right">
+                        <section id="login">
+                            Hello, <span class="username">@(Page.User.Identity.Name)</span>!
+                        </section>
+                        <nav>
+                            <ul id="menu">
+                                <li>@(Html.ActionLink("Home", "Index", "System"))</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    @(Html.Services())
+                </div>
+            }
+        </header>
+        <div id="body">
+            @RenderSection("FeaturedContent", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderSection("MainContent", required: false)
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @(DateTime.Now.Year) -  Naked Objects Group Ltd</p>
+                </div>
+            </div>
+        </footer>
+
+        <!--AJAX:  Replace nakedobjectsajax with nakedobjectsbasic bundle if non-ajax is required -->
+        <!--DATE FORMATS:   The jquerydatepicker bundle specifies that the JQuery DatePicker uses the en-GB date format (dd/mm/yy).
+        To use the US format (mm/dd/yy) just remove the bundle. Or to use another locale, specify the appropriate
+        version of jquery.ui.datepicker in the bundle config -->
+        
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.20/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.js"></script>
+   
+        @(Scripts.Render( "~/bundles/nakedobjectsajax", "~/bundles/jquerydatepicker"))       
+        @RenderSection("ScriptsSection", required: false)
+    </body>
+</html>

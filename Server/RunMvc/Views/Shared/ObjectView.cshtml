@@ -1,0 +1,35 @@
+@model System.Object
+@using NakedObjects.Resources
+@using NakedObjects.Web.Mvc.Html
+
+@{
+    
+    Layout = "Site.WithServices.cshtml";
+}
+
+@section title {@Html.ObjectTitle(Model)}
+@section MainContent { 
+@(Html.History(Model))   
+    <div class="@(IdHelper.ObjectViewName)" id="@(Html.ObjectTypeAsCssId(Model))">
+        @(Html.Object(Model))
+        @(Html.UserMessages())
+
+        @if (Html.ObjectIsNotPersistent(Model)) {
+            using (Html.BeginForm(IdHelper.EditObjectAction,
+                            Html.TypeName(Model).ToString(),
+                            new {id = Html.GetObjectId(Model).ToString()},
+                            FormMethod.Post,
+                            new {@class = IdHelper.EditName})) {
+            @(Html.MenuOnTransient(Model))
+            if (Html.ObjectHasVisibleFields(Model)) {
+                @(Html.PropertyList(Model))   
+            }  
+         }
+        } else {
+            @(Html.Menu(Model))
+            if (Html.ObjectHasVisibleFields(Model)) {
+                @(Html.PropertyList(Model))   
+            }
+        }
+    </div> 
+}

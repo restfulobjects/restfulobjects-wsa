@@ -1,0 +1,17 @@
+
+@using NakedObjects.Resources
+@using NakedObjects.Web.Mvc.Html
+
+@{ 
+ ViewBag.Title = "@(MvcUi.DestroyedErrorTitle)"; 
+}
+
+@section MainContent { 
+@(Html.History())   
+    <div class="error">
+        <img alt="error"  src="@(Url.Content("~/Images/system-error.png"))" />
+        <h2>
+            @(MvcUi.DestroyedErrorText)
+        </h2>
+    </div> 
+}

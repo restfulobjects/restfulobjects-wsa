@@ -1,0 +1,200 @@
+﻿<Infrastructure:VisualStateAwarePage x:Name="pageRoot"
+                           x:Class="RestfulObjects.WSA.Views.HubPage"
+                           DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                           xmlns:Infrastructure="using:Microsoft.Practices.StoreApps.Infrastructure"
+                                     xmlns:behaviors="using:RestfulObjects.WSA.Behaviors"
+                                     xmlns:controls="using:RestfulObjects.WSA.Controls"
+                                     mc:Ignorable="d"
+                           Infrastructure:ViewModelLocator.AutoWireViewModel="true">
+
+    <Page.Resources>
+
+        <!--
+            Collection of grouped items displayed by this page, bound to a subset
+            of the complete item list because items in groups cannot be virtualized
+        -->
+        <!-- <snippet603> -->
+        <!-- <snippet414> -->
+        <CollectionViewSource x:Name="groupedItemsViewSource"
+                              Source="{Binding Path=RootCategories}"
+                              IsSourceGrouped="true"
+                              ItemsPath="Actions" />
+        <!-- </snippet414> -->
+        <!-- </snippet603> -->
+    </Page.Resources>    
+    
+    
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Style="{StaticResource LayoutRootStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid Height="140" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <!-- Preserve spacing of header for other pages that have back button -->
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="pageTitle"
+                       Grid.Column="1"
+                       Text="{StaticResource AppName}"
+                       Style="{StaticResource PageHeaderTextStyle}" />
+            <TextBlock x:Name="NumberOfServices"
+                       Grid.Column="2" 
+                       Style="{StaticResource PageHeaderTextStyle}"
+                       Text="{Binding NumberOfServices}"/>
+        </Grid>
+
+        <StackPanel Grid.Row="1"
+                    Margin="120,20,0,0">
+            <!--
+            <TextBlock Text="Features"
+                       Style="{StaticResource SubheaderTextStyle}" />
+            -->
+<!--
+            <ListView Grid.Row="1"
+                      ItemsSource="{Binding DisplayItems}"
+                      Margin="20,20,0,0"
+                      SelectionMode="None" />
+            -->
+            
+            <controls:MultipleSizedGridView x:Name="itemsGridView"
+                                                AutomationProperties.AutomationId="HubPageItemGridView"
+                                                AutomationProperties.Name="Grouped Items"
+                                                Margin="0,-3,0,0"
+                                                Padding="46,0,40,46"
+                                                ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
+                                                ItemTemplate="{StaticResource AWShopperItemTemplateNEW}"
+                                                SelectionMode="None"
+                                                ScrollViewer.IsHorizontalScrollChainingEnabled="False"
+                                                IsItemClickEnabled="True"
+                                                behaviors:ListViewItemClickedToAction.Action="{Binding ProductNavigationAction}" SelectionChanged="itemsGridView_SelectionChanged">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal"
+                                                    Loaded="virtualizingStackPanel_Loaded" />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                
+                <GridView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Button AutomationProperties.Name="{Binding Title}"
+                                            Foreground="{StaticResource AWShopperAccentTextBrush}"
+                                            Style="{StaticResource TextPrimaryButtonStyle}"
+                                            Command="{Binding CategoryNavigationCommand}"
+                                            Margin="5,0,0,10">
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Title}"
+                                                           Style="{StaticResource GroupHeaderTextStyle}" />
+                                            <TextBlock Text="{StaticResource ChevronGlyph}"
+                                                           Style="{StaticResource GroupHeaderTextStyle}"
+                                                           FontFamily="{StaticResource SymbolThemeFontFamily}"
+                                                           Margin="10,0" />
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                        <GroupStyle.Panel>
+                            <ItemsPanelTemplate>
+                                <VariableSizedWrapGrid ItemWidth="300"
+                                                           ItemHeight="60"
+                                                           Orientation="Vertical"
+                                                           Margin="0,0,10,0" />
+                            </ItemsPanelTemplate>
+                        </GroupStyle.Panel>
+                    </GroupStyle>
+                </GridView.GroupStyle>
+            </controls:MultipleSizedGridView>
+
+            <!--
+            <ListView x:Name="itemListView"
+                      AutomationProperties.AutomationId="HubPageItemListView"
+                      AutomationProperties.Name="Grouped Items"
+                      Grid.Row="1"
+                      Padding="10,0,0,0"
+                      ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
+                      ItemTemplate="{StaticResource ProductTemplateSnapped}"
+                      SelectionMode="None"
+                      IsItemClickEnabled="True"
+                      behaviors:ListViewItemClickedToAction.Action="{Binding ProductNavigationAction}">
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Button AutomationProperties.Name="Group Title"
+                                        Foreground="{StaticResource AWShopperAccentTextBrush}"
+                                        Style="{StaticResource TextPrimaryButtonStyle}"
+                                        Command="{Binding CategoryNavigationCommand}"
+                                        Margin="10,10,0,10">
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Title}"
+                                                       Style="{StaticResource GroupHeaderTextStyle}" />
+                                            <TextBlock Text="{StaticResource ChevronGlyph}"
+                                                       Style="{StaticResource GroupHeaderTextStyle}"
+                                                       FontFamily="{StaticResource SymbolThemeFontFamily}"
+                                                       Margin="10,0" />
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListView.GroupStyle>
+            </ListView>
+            -->
+            
+            <!--
+            <Grid>
+                <Button HorizontalAlignment="Right"
+                        Margin="0,20,120,0"
+                        Content="Navigate To User Input Page"
+                        Command="{Binding NavigateCommand}" />
+            </Grid>
+            -->
+        </StackPanel>
+
+
+        <VisualStateManager.VisualStateGroups>
+
+            <!-- Visual states reflect the application's view state -->
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscape" />
+                <VisualState x:Name="Filled" />
+
+                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+                <VisualState x:Name="FullScreenPortrait">
+                    <Storyboard>
+                    </Storyboard>
+                </VisualState>
+
+                <!-- The back button and title have different styles when snapped -->
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle"
+                                                       Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                    Value="{StaticResource SnappedPageHeaderTextStyle}" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Infrastructure:VisualStateAwarePage>

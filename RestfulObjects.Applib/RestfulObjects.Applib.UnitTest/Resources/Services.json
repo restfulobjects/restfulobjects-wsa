@@ -1,0 +1,68 @@
+﻿{
+   "links": [
+      {
+         "rel": "self",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/list\"; charset=utf-8; x-ro-element-type=\"System.Object\"",
+         "href": "http://localhost:7070/services"
+      },
+      {
+         "rel": "up",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/homepage\"; charset=utf-8",
+         "href": "http://localhost:7070/"
+      }
+   ],
+   "extensions": {},
+   "value": [
+      {
+         "title": "Customers",
+         "rel": "urn:org.restfulobjects:rels/service;serviceId=\"Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices"
+      },
+      {
+         "title": "Officers",
+         "rel": "urn:org.restfulobjects:rels/service;serviceId=\"Sdm.Cluster.Officers.Impl.Services.OfficerMenuServices\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Officers.Impl.Services.OfficerMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Officers.Impl.Services.OfficerMenuServices"
+      },
+      {
+         "title": "Locations",
+         "rel": "urn:org.restfulobjects:rels/service;serviceId=\"Sdm.Cluster.Location.Impl.Services.LocationMenuServices\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Location.Impl.Services.LocationMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Location.Impl.Services.LocationMenuServices"
+      },
+      {
+         "title": "Intreo Reception",
+         "rel": "urn:org.restfulobjects:rels/service;serviceId=\"Sdm.Cluster.IntegRecep.Impl.Service.IntegratedReceptionMenuServices\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.IntegRecep.Impl.Service.IntegratedReceptionMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.IntegRecep.Impl.Service.IntegratedReceptionMenuServices"
+      },
+      {
+         "title": "Communications",
+         "rel": "urn:org.restfulobjects:rels/service;serviceId=\"Sdm.Cluster.Comms.Impl.Services.CommunicationMenuServices\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Comms.Impl.Services.CommunicationMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Comms.Impl.Services.CommunicationMenuServices"
+      },
+      {
+         "title": "Appointments",
+         "rel": "urn:org.restfulobjects:rels/service;serviceId=\"Sdm.Cluster.Appointment.Impl.AppointmentMenuServices\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Appointment.Impl.AppointmentMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Appointment.Impl.AppointmentMenuServices"
+      },
+      {
+         "title": "Tasks",
+         "rel": "urn:org.restfulobjects:rels/service;serviceId=\"Sdm.Cluster.Task.Impl.Services.TaskMenuServices\"",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Task.Impl.Services.TaskMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Task.Impl.Services.TaskMenuServices"
+      }
+   ]
+}

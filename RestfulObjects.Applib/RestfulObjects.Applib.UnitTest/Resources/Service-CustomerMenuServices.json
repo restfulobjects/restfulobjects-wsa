@@ -1,0 +1,97 @@
+﻿{
+   "serviceId": "Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices",
+   "title": "Customers",
+   "links": [
+      {
+         "rel": "self",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object\"; charset=utf-8; x-ro-domain-type=\"Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices\"",
+         "href": "http://localhost:7070/services/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices"
+      },
+      {
+         "rel": "describedby",
+         "method": "GET",
+         "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/domain-type\"; charset=utf-8",
+         "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices"
+      }
+   ],
+   "extensions": {
+      "friendlyName": "Customers",
+      "description": "",
+      "pluralName": "Customerses",
+      "domainType": "Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices",
+      "isService": true
+   },
+   "members": {
+      "FindByName": {
+         "memberType": "action",
+         "id": "FindByName",
+         "links": [
+            {
+               "rel": "urn:org.restfulobjects:rels/details;action=\"FindByName\"",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object-action\"; charset=utf-8",
+               "href": "http://localhost:7070/services/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByName"
+            },
+            {
+               "rel": "urn:org.restfulobjects:rels/return-type",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/domain-type\"; charset=utf-8",
+               "href": "http://localhost:7070/domain-types/list"
+            },
+            {
+               "rel": "urn:org.restfulobjects:rels/element-type",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/domain-type\"; charset=utf-8",
+               "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Customer"
+            },
+            {
+               "rel": "describedby",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/action-description\"; charset=utf-8",
+               "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByName"
+            }
+         ],
+         "extensions": {
+            "friendlyName": "Find By Name",
+            "description": "",
+            "hasParams": true,
+            "memberOrder": 0,
+            "returnType": "list",
+            "elementType": "Sdm.Cluster.Customers.Impl.Customer",
+            "pluralName": "Customers"
+         }
+      },
+      "FindByPpsn": {
+         "memberType": "action",
+         "id": "FindByPpsn",
+         "links": [
+            {
+               "rel": "urn:org.restfulobjects:rels/details;action=\"FindByPpsn\"",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/object-action\"; charset=utf-8",
+               "href": "http://localhost:7070/services/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByPpsn"
+            },
+            {
+               "rel": "urn:org.restfulobjects:rels/return-type",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/domain-type\"; charset=utf-8",
+               "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Customer"
+            },
+            {
+               "rel": "describedby",
+               "method": "GET",
+               "type": "application/json; profile=\"urn:org.restfulobjects:repr-types/action-description\"; charset=utf-8",
+               "href": "http://localhost:7070/domain-types/Sdm.Cluster.Customers.Impl.Services.CustomerMenuServices/actions/FindByPpsn"
+            }
+         ],
+         "extensions": {
+            "friendlyName": "Find By Ppsn",
+            "description": "",
+            "hasParams": true,
+            "memberOrder": 0,
+            "returnType": "Sdm.Cluster.Customers.Impl.Customer"
+         }
+      }
+   }
+}

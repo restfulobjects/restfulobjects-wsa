@@ -1,0 +1,17 @@
+@model System.Collections.IEnumerable
+@using NakedObjects.Web.Mvc.Html
+
+@{  
+    Layout = "Site.WithServices.cshtml";
+}
+
+@section title {@Html.ObjectTitle(Model)}
+
+@section MainContent { 
+@(Html.History())   
+    <div class="@(IdHelper.StandaloneTableName)" id="@(Html.ObjectTypeAsCssId(Model))">
+        @(Html.Object(Model))
+        @(Html.UserMessages())
+        @(Html.Collection(Model))
+    </div> 
+}
