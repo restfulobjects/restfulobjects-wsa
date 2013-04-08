@@ -70,9 +70,9 @@ The codebase consists of several solutions and projects:
 
 The following are sketches as to how the application might evolve.
 
-![](https://github.com/danhaywood/ro-winstoreapp/blob/master/png/Slide1.PNG?raw=true)
+![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/png/Slide1.PNG?raw=true)
 
-![](https://github.com/danhaywood/ro-winstoreapp/blob/master/png/Slide2.PNG?raw=true)
+![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/png/Slide2.PNG?raw=true)
 
 
 
