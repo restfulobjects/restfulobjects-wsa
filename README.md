@@ -57,6 +57,13 @@ The codebase consists of:
 - Tools > Options > Package Manager > Allow Nuget to download missing packages during build
 
 
+### Developer license
+
+To deploy/run WSA apps locally, you require a (free) developer license.  This in turn requires a (free) Microsoft account.
+
+If you do not have a Microsoft account, then sign up for one [here](https://signup.live.com/signup.aspx?lic=1).
+
+
 
 ### SQL Express or SQL Server
 
@@ -80,20 +87,31 @@ The domain model itself is part of the `Server` project, see above.
 
 The following are sketches as to how the application might evolve.
 
-![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/png/Slide1.PNG?raw=true)
+![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/specs/mockups/Slide1.PNG?raw=true)
 
-![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/png/Slide2.PNG?raw=true)
+![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/specs/mockups/Slide2.PNG?raw=true)
+
+Further sketches can be found [here](https://github.com/danhaywood/restfulobjects-wsa/blob/master/specs/mockups/stories)
+
+## Building/Deploying the Code
+
+### Dev license
+
+When performing a deploy, a (free) developers license is required.  This in turn requires a (free) Microsoft account (see prereqs, above).
+
+Details and screenshots on the dev license prompt are [here](http://www.c-sharpcorner.com/UploadFile/7e39ca/how-to-renew-developer-license-for-windows-store-apps/)
 
 
-
-## Building the Code
+### Workaround to the failure to delete `resources.pri` file
 
 If do a full clean/rebuild/deploy, the deploy always fails:
 
 - initially with an error 'operation cannot be performed on a file with a user-mapped section open'
-- then (if attempt again) with an error indicating that the file bin\debug\AppX\resources.pri file could not be deleted.
+- then (if attempt again) with an error indicating that the file `bin\debug\AppX\resources.pri` file could not be deleted.
+
 However, this file *can* be deleted manually from Windows Explorer if shift-delete (force delete); the deploy should then succeed.
 
+It's worth keeping Windows Explorer open at this location.
 
 ## Implementation Notes
 
@@ -107,13 +125,11 @@ When installing Json.Net, had to set copyLocal=false
 
 #### RunMVC
 
-is ready to run
-- Project Properties > Web > run on port 8282
+is ready to run (on port 8282)
 
 #### Configuring RO (the `RunRestfulObjectsServer` project)
 
-is ready to run.
-- Project Properties > Web > run on port 9292
+is ready to run (on port 9292)
 
 was created as follows:
 
@@ -124,6 +140,6 @@ was created as follows:
 - copied from RunMVC's RunWeb class
   - MenuServices, ContributedActions, Persistor
 - Project Properties > Web > run on port 9292
-- make startup
+- set as startup project
 
 
