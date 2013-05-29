@@ -85,13 +85,16 @@ The domain model itself is part of the `Server` project, see above.
 
 ## UI Design Sketch for RestfulObjects.WSA
 
-The following are sketches as to how the application might evolve.
+The following are the original sketches as to how the application might evolve.
 
 ![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/specs/mockups/Slide1.PNG?raw=true)
 
 ![](https://github.com/danhaywood/restfulobjects-wsa/blob/master/specs/mockups/Slide2.PNG?raw=true)
 
-Further sketches can be found [here](https://github.com/danhaywood/restfulobjects-wsa/blob/master/specs/mockups/stories)
+## Stories
+
+A number of stories that build upon the original UI design sketches are available [here](https://github.com/danhaywood/restfulobjects-wsa/tree/master/specs/stories).  
+
 
 ## Building/Deploying the Code
 
