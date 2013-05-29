@@ -217,9 +217,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PubSubEvents\Microsoft.Practices.PubSubEvents.csproj">
-      <Project>{d5d2645c-03eb-48b0-9873-0904fcdb2ced}</Project>
-      <Name>Microsoft.Practices.PubSubEvents</Name>
+    <ProjectReference Include="..\..\Prism\Prism.PubSubEvents\Microsoft.Practices.Prism.PubSubEvents.csproj">
+      <Project>{903ab517-6f39-48c3-b34b-3a85fc8cd40e}</Project>
+      <Name>Microsoft.Practices.Prism.PubSubEvents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Prism\Prism.StoreApps\Microsoft.Practices.Prism.StoreApps.csproj">
+      <Project>{bccc8279-87ca-4f1b-8abe-36fafc46469e}</Project>
+      <Name>Microsoft.Practices.Prism.StoreApps</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\RestfulObjects.Applib\RestfulObjects.Applib.WinRT\RestfulObjects.Applib.WinRT.csproj">
       <Project>{5f8eb25c-e935-472f-b4df-0dc54c96cd37}</Project>
@@ -228,10 +232,6 @@
     <ProjectReference Include="..\..\RestfulObjects.Applib\RestfulObjects.ApplibPCL\RestfulObjects.ApplibPCL.csproj">
       <Project>{931a4b40-dae5-405e-955d-9245c891725a}</Project>
       <Name>RestfulObjects.ApplibPCL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\StoreApps.Infrastructure\Microsoft.Practices.StoreApps.Infrastructure.csproj">
-      <Project>{a2303152-0f67-4ca5-8639-0a16e64a8b6d}</Project>
-      <Name>Microsoft.Practices.StoreApps.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

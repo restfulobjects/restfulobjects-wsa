@@ -7,7 +7,7 @@
 
 
 using System.Collections.Generic;
-using Microsoft.Practices.StoreApps.Infrastructure.Interfaces;
+using Microsoft.Practices.Prism.StoreApps.Interfaces;
 
 namespace RestfulObjects.WSA.Services
 {

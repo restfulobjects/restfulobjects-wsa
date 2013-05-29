@@ -6,7 +6,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved
 
 
-using Microsoft.Practices.StoreApps.Infrastructure;
+using Microsoft.Practices.Prism.StoreApps;
 
 // The Item Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234232
 

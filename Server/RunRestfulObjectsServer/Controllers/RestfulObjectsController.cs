@@ -9,7 +9,7 @@ using System.Web.Http.ModelBinding;
 using RestfulObjects.Mvc;
 using RestfulObjects.Mvc.Model;
 
-namespace RunRestfulObjects.Controllers {
+namespace RunRestfulObjectsServer.Controllers {
     public class RestfulObjectsController : RestfulObjectsControllerBase {
         [HttpGet]
         public override HttpResponseMessage GetHome([ModelBinder(typeof (ReservedArgumentsBinder))] ReservedArguments arguments) {

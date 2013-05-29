@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EE0CC5
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunRestfulObjects", "RunRestfulObjects\RunRestfulObjects.csproj", "{EAD6A5F6-DB01-457E-9406-D3890B32D7E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunRestfulObjectsServer", "RunRestfulObjectsServer\RunRestfulObjectsServer.csproj", "{928106D7-1E7A-4499-8545-D108FD54E762}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -31,10 +31,10 @@ Global
 		{37827E49-8479-496B-A01C-28A92F685DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37827E49-8479-496B-A01C-28A92F685DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37827E49-8479-496B-A01C-28A92F685DEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EAD6A5F6-DB01-457E-9406-D3890B32D7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EAD6A5F6-DB01-457E-9406-D3890B32D7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EAD6A5F6-DB01-457E-9406-D3890B32D7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EAD6A5F6-DB01-457E-9406-D3890B32D7E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{928106D7-1E7A-4499-8545-D108FD54E762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{928106D7-1E7A-4499-8545-D108FD54E762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{928106D7-1E7A-4499-8545-D108FD54E762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{928106D7-1E7A-4499-8545-D108FD54E762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

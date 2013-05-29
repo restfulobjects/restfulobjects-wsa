@@ -7,7 +7,7 @@
 
 
 using System.Collections.Generic;
-using Microsoft.Practices.StoreApps.Infrastructure;
+using Microsoft.Practices.Prism.StoreApps;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;

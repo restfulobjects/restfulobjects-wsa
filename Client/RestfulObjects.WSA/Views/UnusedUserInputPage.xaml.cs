@@ -6,7 +6,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved
 
 
-using Microsoft.Practices.StoreApps.Infrastructure;
+using Microsoft.Practices.Prism.StoreApps;
 
 namespace RestfulObjects.WSA.Views
 {

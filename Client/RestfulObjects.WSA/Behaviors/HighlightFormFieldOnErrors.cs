@@ -8,7 +8,7 @@
 
 using System.Collections.ObjectModel;
 using System.Linq;
-using Microsoft.Practices.StoreApps.Infrastructure;
+using Microsoft.Practices.Prism.StoreApps;
 using Windows.UI.Xaml;
 
 namespace RestfulObjects.WSA.Behaviors

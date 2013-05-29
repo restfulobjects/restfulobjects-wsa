@@ -12,7 +12,7 @@ using NakedObjects.Surface;
 using NakedObjects.Surface.Nof4.Implementation;
 using NakedObjects.Surface.Nof4.Utility;
 
-namespace RunRestfulObjects.App_Start {
+namespace RunRestfulObjectsServer.App_Start {
     public class RestDependencyResolver : IDependencyResolver {
         private NakedObjectsSurface surface;
 

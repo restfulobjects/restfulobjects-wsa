@@ -104,6 +104,7 @@ namespace AdventureWorksModel {
             return indv;
         }
 
+        [QueryOnly]
         [MemberOrder(70, Name = "Individuals")]
         public Individual RandomIndividual() {
             return Random<Individual>();

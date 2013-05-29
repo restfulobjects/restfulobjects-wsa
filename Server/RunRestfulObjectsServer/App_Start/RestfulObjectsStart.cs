@@ -4,7 +4,7 @@
 
 using System.Web.Http;
 using System.Web.Routing;
-using RunRestfulObjects.App_Start;
+using RunRestfulObjectsServer.App_Start;
 using RestfulObjects.Mvc;
 using RestfulObjects.Mvc.Media;
 using WebActivator;
@@ -12,7 +12,7 @@ using WebActivator;
 [assembly: PreApplicationStartMethod(typeof (RestfulObjectsStart), "PreStart")]
 [assembly: PostApplicationStartMethod(typeof (RestfulObjectsStart), "PostStart")]
 
-namespace RunRestfulObjects.App_Start {
+namespace RunRestfulObjectsServer.App_Start {
     public static class RestfulObjectsStart {
         public static void PreStart() {
             RegisterRoutes(RouteTable.Routes);
@@ -26,6 +26,7 @@ namespace RunRestfulObjects.App_Start {
             GlobalConfiguration.Configuration.Formatters.Clear();
             GlobalConfiguration.Configuration.Formatters.Insert(0, new JsonNetFormatter(null));
             //GlobalConfiguration.Configuration.MessageHandlers.Add(new AccessControlExposeHeadersHandler());
+            //GlobalConfiguration.Configuration.MessageHandlers.Add(new BasicAuthenticationHandler());
         }
 
         public static void RegisterRoutes(RouteCollection routes) {

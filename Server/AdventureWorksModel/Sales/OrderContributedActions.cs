@@ -14,13 +14,14 @@ namespace AdventureWorksModel {
        
         #region Comments
 
-        public void AppendComment(string commentToAppend, IQueryable<SalesOrderHeader> toOrders) {
+        [Named("Append Comment")]
+        public void AppendCommentMany(string commentToAppend, IQueryable<SalesOrderHeader> toOrders) {
             foreach (SalesOrderHeader order in toOrders) {
                 AppendComment(commentToAppend, order);
             }
         }
 
-        public string ValidateAppendComment(string commentToAppend, IQueryable<SalesOrderHeader> toOrders) {
+        public string ValidateAppendCommentMany(string commentToAppend, IQueryable<SalesOrderHeader> toOrders) {
             return string.IsNullOrEmpty(commentToAppend) ? "Comment required" : null;
         }
 
@@ -39,7 +40,7 @@ namespace AdventureWorksModel {
         }
 
         public void CommentAsUsersUnhappy(IQueryable<SalesOrderHeader> toOrders) {
-            AppendComment("User unhappy", toOrders);
+            AppendCommentMany("User unhappy", toOrders);
         }
 
         public string ValidateCommentAsUsersUnhappy(IQueryable<SalesOrderHeader> toOrders) {

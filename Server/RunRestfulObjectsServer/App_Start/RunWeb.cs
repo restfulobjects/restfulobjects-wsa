@@ -5,7 +5,7 @@ using NakedObjects.Core.NakedObjectsSystem;
 using NakedObjects.EntityObjectStore;
 using RestfulObjects.Bootstrap;
 
-namespace RunRestfulObjects.App_Start {
+namespace RunRestfulObjectsServer.App_Start {
 	public class RunWeb : RunRest {
 		protected override NakedObjectsContext Context {
 			get { return HttpContextContext.CreateInstance(); }
@@ -35,19 +35,18 @@ namespace RunRestfulObjects.App_Start {
             get { return new ServicesInstaller(new OrderContributedActions(), new CustomerContributedActions()); }
         }
 
-        protected override IServicesInstaller SystemServices
-        {
-            get { return new ServicesInstaller(); }
-        }
+		protected override IServicesInstaller SystemServices {
+			get { return new ServicesInstaller(); }
+		}
 
         protected override IObjectPersistorInstaller Persistor
         {
             get
             {
-                // Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0"); //For in-memory database
-                // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyDbContext>()); //Optional behaviour for CodeFirst
+                // Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0"); // Code First option: for in-memory database
+                // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyDbContext>()); // Code First option
                 var installer = new EntityPersistorInstaller();
-                // installer.AddCodeFirstDbContextConstructor(() => new MyDbContext());  //For Code First
+                // installer.AddCodeFirstDbContextConstructor(() => new MyDbContext());  //Code First requirement: add each DbContext
                 return installer;
             }
         }

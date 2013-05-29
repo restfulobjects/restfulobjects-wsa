@@ -14,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using NakedObjects.Surface;
 
-namespace RunRestfulObjects.App_Start {
+namespace RunRestfulObjectsServer.App_Start {
     public class BasicAuthenticationHandler : DelegatingHandler {
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken) {
             HttpRequestMessage r = request;
