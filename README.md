@@ -40,7 +40,7 @@ The codebase consists of:
 * `Server` solution
    - `AdventureWorks` domain object model project
       - downloaded from [NO website](http://nakedobjects.codeplex.com/releases/view/100899) ([zip file](http://nakedobjects.codeplex.com/downloads/get/609253))
-   - `RunRestfulObjectsServer` project
+   - `RunRestfulObjectsServer` project (running RO 1.1.0)
       - runs RO web service, port 9292
    - `RunMVC` project
       - runs NO MVC webapp, port 8282
