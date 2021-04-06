@@ -1,3 +1,5 @@
+THIS PROJECT HAS BEEN ARCHIVED (not copied anywhere)
+
 RestfulObjects-WSA
 ==================
 
